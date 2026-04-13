@@ -805,7 +805,9 @@
   /* MOBILE (até 768px) */
   @media (max-width: 768px) {
     .container { padding: 0 16px 32px; }
-    header { flex-direction: column; gap: 12px; align-items: flex-start; }
+    header { flex-direction: column; gap: 16px; align-items: flex-start; }
+    .header-right { text-align: left; width: 100%; }
+    .period-badge { font-size: 10px; padding: 5px 10px; }
     .logo-text { font-size: 28px; }
     .hero-grid { grid-template-columns: 1fr 1fr; }
     .hero-card.featured { grid-column: span 2; }
@@ -833,6 +835,7 @@
     .metric-value { font-size: 36px; }
     .hero-card.featured .metric-value { font-size: 48px; }
     .logo-text { font-size: 24px; }
+    .period-badge { font-size: 9px; padding: 4px 10px; }
     .insights-grid { grid-template-columns: 1fr; }
     [style*="grid-template-columns: 1fr 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
   }
