@@ -234,36 +234,29 @@
   .growth-stat-label { font-size: 10px; color: var(--text-muted); text-align: center; }
   .growth-stat-div { width: 1px; height: 40px; background: rgba(34,197,94,.2); flex-shrink: 0; }
 
-  .feat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; display: flex; gap: 16px; align-items: flex-start; margin-bottom: 12px; transition: border-color .2s, transform .2s; }
-  .feat-card:hover { border-color: rgba(0,189,247,.35); transform: translateY(-2px); }
-  .feat-rank { font-family: "tablet-gothic-compressed", sans-serif; font-size: 52px; font-weight: 800; color: var(--accent); opacity: .18; line-height: 1; flex-shrink: 0; width: 32px; padding-top: 2px; }
-  .feat-type { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
-  .feat-title { font-family: "tablet-gothic-compressed", sans-serif; font-size: 18px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: .5px; line-height: 1.1; margin-bottom: 3px; }
-  .feat-date { font-size: 11px; color: var(--text-dim); margin-bottom: 14px; }
-  .feat-stats { display: flex; gap: 18px; flex-wrap: wrap; }
-  .feat-stat { display: flex; flex-direction: column; gap: 2px; }
-  .feat-stat-val { font-family: "tablet-gothic-compressed", sans-serif; font-size: 22px; font-weight: 800; color: var(--text); line-height: 1; }
+  /* CONTEÚDOS DE DESTAQUE */
+  .feat-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: stretch; gap: 0; margin-bottom: 14px; min-height: 290px; transition: border-color .2s, transform .2s; }
+  .feat-card:hover { border-color: rgba(0,189,247,.3); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,189,247,.07); }
+  .feat-thumb { width: 155px; flex-shrink: 0; position: relative; overflow: hidden; background: var(--card2); border-right: 1px solid var(--border); }
+  .feat-thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: block; }
+  .feat-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .feat-body { flex: 1; padding: 20px 22px; display: flex; flex-direction: column; min-width: 0; }
+  .feat-badge { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 7px; display: flex; align-items: center; gap: 6px; }
+  .feat-badge span { opacity: .5; }
+  .feat-title { font-family: "tablet-gothic-compressed", sans-serif; font-size: 17px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: .5px; line-height: 1.2; margin-bottom: 3px; }
+  .feat-date { font-size: 11px; color: var(--text-dim); margin-bottom: 16px; }
+  .feat-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 14px; background: rgba(0,0,0,.15); border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; }
+  .feat-stat { display: flex; flex-direction: column; gap: 3px; }
+  .feat-stat-val { font-family: "tablet-gothic-compressed", sans-serif; font-size: 20px; font-weight: 800; color: var(--text); line-height: 1; }
   .feat-stat-lbl { font-size: 9px; color: var(--text-dim); letter-spacing: .5px; text-transform: uppercase; }
-  .feat-highlight { margin-top: 12px; background: rgba(0,189,247,.06); border-radius: 8px; padding: 8px 12px; font-size: 11px; color: var(--accent); font-weight: 600; line-height: 1.5; }
-
-  .sorteio-card { background: linear-gradient(135deg, rgba(0,189,247,.07) 0%, var(--card) 70%); border: 1px solid rgba(0,189,247,.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 28px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-  .sorteio-stat { text-align: center; }
-  .sorteio-stat-val { font-family: "tablet-gothic-compressed", sans-serif; font-size: 32px; font-weight: 800; line-height: 1; }
-  .sorteio-stat-lbl { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
-  .sorteio-div { width: 1px; height: 34px; background: var(--border); flex-shrink: 0; }
-  .feat-thumb { width: 160px; flex-shrink: 0; border-radius: 10px; overflow: hidden; position: relative; background: var(--card2); height: 280px; }
-  .feat-thumb iframe { width: 100%; height: 100%; border: none; display: block; }
-  .sorteio-thumb { width: 90px; flex-shrink: 0; border-radius: 10px; overflow: hidden; position: relative; background: var(--muted); aspect-ratio: 1/1; }
-  .sorteio-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .feat-note { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); line-height: 1.55; }
 
   @media (max-width: 768px) {
     .kpi-strip { grid-template-columns: repeat(2, 1fr); }
     .growth-banner { flex-direction: column; }
     .growth-stat-group { justify-content: flex-start; }
-    .feat-card { flex-direction: column; }
-    .feat-thumb { width: 100%; height: 420px; }
-    .sorteio-card { flex-direction: column; }
-    .sorteio-thumb { width: 100%; height: 200px; aspect-ratio: unset; }
+    .feat-card { flex-direction: column; min-height: unset; }
+    .feat-thumb { width: 100%; height: 380px; border-right: none; border-bottom: 1px solid var(--border); }
   }
 </style>
 </head>
@@ -1128,57 +1121,53 @@
     <div class="section-label">Conteúdos de destaque · Maio</div>
 
     <div class="feat-card">
-      <div class="feat-rank">1</div>
-      <div style="flex:1;">
-        <div class="feat-type">Reel · Maior alcance do período</div>
+      <div class="feat-thumb">
+        <iframe src="https://www.instagram.com/reel/DX7dfueiPNO/embed/" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media autoplay; clipboard-write; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="feat-body">
+        <div class="feat-badge">REEL <span>·</span> #1 <span>·</span> MAIOR ALCANCE</div>
         <div class="feat-title">"Tem coisa que só quem é mãe sente" — Dia das Mães</div>
         <div class="feat-date">4 de maio · Duração: 0:50</div>
         <div class="feat-stats">
           <div class="feat-stat"><div class="feat-stat-val">92.874</div><div class="feat-stat-lbl">Visualizações</div></div>
           <div class="feat-stat"><div class="feat-stat-val">50.849</div><div class="feat-stat-lbl">Alcance</div></div>
-          <div class="feat-stat"><div class="feat-stat-val">166</div><div class="feat-stat-lbl">Interações</div></div>
-          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">105</div><div class="feat-stat-lbl">Novos seguidores</div></div>
-          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--text-muted);">1h 52m</div><div class="feat-stat-lbl">Tempo assistido</div></div>
+          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">105</div><div class="feat-stat-lbl">Novos seg.</div></div>
         </div>
-        <div class="feat-highlight">50.849 pessoas únicas. Maior alcance do período. Data comemorativa + humanização = o reel que mais converteu em audiência.</div>
+        <div class="feat-note">50.849 pessoas únicas. Maior alcance do período. Data comemorativa + humanização = o reel que mais converteu em audiência.</div>
       </div>
-      <div class="feat-thumb"><iframe src="https://www.instagram.com/reel/DX7dfueiPNO/embed/" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media autoplay; clipboard-write; picture-in-picture" loading="lazy"></iframe></div>
     </div>
 
     <div class="feat-card">
-      <div class="feat-rank">2</div>
-      <div style="flex:1;">
-        <div class="feat-type">Reel · Maior conversão em seguidores</div>
+      <div class="feat-thumb">
+        <iframe src="https://www.instagram.com/reel/DYwsfpdhEI4/embed/" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media autoplay; clipboard-write; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="feat-body">
+        <div class="feat-badge">REEL <span>·</span> #2 <span>·</span> MAIOR CONVERSÃO</div>
         <div class="feat-title">"Esquecer a luz acesa, levantar para apagar..."</div>
         <div class="feat-date">21 de maio · Duração: 0:34</div>
         <div class="feat-stats">
           <div class="feat-stat"><div class="feat-stat-val">35.866</div><div class="feat-stat-lbl">Visualizações</div></div>
           <div class="feat-stat"><div class="feat-stat-val">20.097</div><div class="feat-stat-lbl">Alcance</div></div>
-          <div class="feat-stat"><div class="feat-stat-val">323</div><div class="feat-stat-lbl">Interações</div></div>
-          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--accent);">242</div><div class="feat-stat-lbl">Curtidas</div></div>
-          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">221</div><div class="feat-stat-lbl">Novos seguidores</div></div>
+          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">221</div><div class="feat-stat-lbl">Novos seg.</div></div>
         </div>
-        <div class="feat-highlight">221 novos seguidores — tudo de um único reel. Conteúdo do cotidiano que o público reconhece converte mais do que qualquer anúncio.</div>
+        <div class="feat-note">221 novos seguidores — tudo de um único reel. Conteúdo do cotidiano que o público reconhece converte mais do que qualquer anúncio.</div>
       </div>
-      <div class="feat-thumb"><iframe src="https://www.instagram.com/reel/DYwsfpdhEI4/embed/" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media autoplay; clipboard-write; picture-in-picture" loading="lazy"></iframe></div>
     </div>
 
-    <!-- SORTEIO -->
-    <div class="sorteio-card">
-      <div class="sorteio-thumb"><img src="mai_sorteio.png" alt="Post Sorteio Brasil"></div>
-      <div style="flex-shrink:0; min-width:140px;">
-        <div style="font-size:9px; color:var(--accent); font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:6px;">Post · 8 de junho</div>
-        <div style="font-family:'tablet-gothic-compressed',sans-serif; font-size:22px; font-weight:800; color:var(--text); text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">Sorteio Brasil</div>
-        <div style="font-size:11px; color:var(--text-dim); line-height:1.5; margin-top:6px;">Maior engajamento da história do perfil.</div>
+    <div class="feat-card">
+      <div class="feat-thumb">
+        <img src="mai_sorteio.png" alt="Post Sorteio Brasil">
       </div>
-      <div style="flex:1; display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:flex-end;">
-        <div class="sorteio-stat"><div class="sorteio-stat-val">5.648</div><div class="sorteio-stat-lbl">Visualizações</div></div>
-        <div class="sorteio-div"></div>
-        <div class="sorteio-stat"><div class="sorteio-stat-val" style="color:var(--accent);">274</div><div class="sorteio-stat-lbl">Comentários</div></div>
-        <div class="sorteio-div"></div>
-        <div class="sorteio-stat"><div class="sorteio-stat-val" style="color:var(--green);">370</div><div class="sorteio-stat-lbl">Interações totais</div></div>
-        <div class="sorteio-div"></div>
-        <div class="sorteio-stat"><div class="sorteio-stat-val">26</div><div class="sorteio-stat-lbl">Novos seguidores</div></div>
+      <div class="feat-body">
+        <div class="feat-badge">POST <span>·</span> #3 <span>·</span> MAIOR ENGAJAMENTO</div>
+        <div class="feat-title">Sorteio Brasil</div>
+        <div class="feat-date">8 de junho</div>
+        <div class="feat-stats">
+          <div class="feat-stat"><div class="feat-stat-val">5.648</div><div class="feat-stat-lbl">Visualizações</div></div>
+          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--accent);">274</div><div class="feat-stat-lbl">Comentários</div></div>
+          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">370</div><div class="feat-stat-lbl">Interações</div></div>
+        </div>
+        <div class="feat-note">274 comentários — maior da história do perfil. Mecânica de sorteio transforma alcance em comunidade ativa.</div>
       </div>
     </div>
 
