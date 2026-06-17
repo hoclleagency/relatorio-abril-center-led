@@ -217,6 +217,48 @@
     .hero-grid, .summary-hero { grid-template-columns: 1fr 1fr; }
     .content-grid { grid-template-columns: 1fr 1fr; }
   }
+
+  /* ===== MAIO 2026 ===== */
+  .kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
+  .kpi-strip-item { background: var(--card); padding: 22px 18px; display: flex; flex-direction: column; gap: 3px; transition: background .2s; }
+  .kpi-strip-item:hover { background: var(--card2); }
+  .kpi-strip-icon { font-size: 16px; margin-bottom: 6px; }
+  .kpi-strip-value { font-family: "tablet-gothic-compressed", sans-serif; font-size: 36px; font-weight: 800; color: var(--text); line-height: 1; }
+  .kpi-strip-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .kpi-strip-delta { font-size: 10px; font-weight: 700; color: var(--green); margin-top: 5px; }
+
+  .growth-banner { background: linear-gradient(135deg, rgba(34,197,94,.08) 0%, rgba(0,189,247,.05) 100%); border: 1px solid rgba(34,197,94,.22); border-radius: 16px; padding: 22px 24px; margin-bottom: 28px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  .growth-stat-group { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; flex: 1; justify-content: flex-end; }
+  .growth-banner-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .growth-stat-value { font-family: "tablet-gothic-compressed", sans-serif; font-size: 32px; font-weight: 800; color: var(--green); line-height: 1; }
+  .growth-stat-label { font-size: 10px; color: var(--text-muted); text-align: center; }
+  .growth-stat-div { width: 1px; height: 40px; background: rgba(34,197,94,.2); flex-shrink: 0; }
+
+  .feat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; display: flex; gap: 16px; align-items: flex-start; margin-bottom: 12px; transition: border-color .2s, transform .2s; }
+  .feat-card:hover { border-color: rgba(0,189,247,.35); transform: translateY(-2px); }
+  .feat-rank { font-family: "tablet-gothic-compressed", sans-serif; font-size: 52px; font-weight: 800; color: var(--accent); opacity: .18; line-height: 1; flex-shrink: 0; width: 32px; padding-top: 2px; }
+  .feat-type { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .feat-title { font-family: "tablet-gothic-compressed", sans-serif; font-size: 18px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: .5px; line-height: 1.1; margin-bottom: 3px; }
+  .feat-date { font-size: 11px; color: var(--text-dim); margin-bottom: 14px; }
+  .feat-stats { display: flex; gap: 18px; flex-wrap: wrap; }
+  .feat-stat { display: flex; flex-direction: column; gap: 2px; }
+  .feat-stat-val { font-family: "tablet-gothic-compressed", sans-serif; font-size: 22px; font-weight: 800; color: var(--text); line-height: 1; }
+  .feat-stat-lbl { font-size: 9px; color: var(--text-dim); letter-spacing: .5px; text-transform: uppercase; }
+  .feat-highlight { margin-top: 12px; background: rgba(0,189,247,.06); border-radius: 8px; padding: 8px 12px; font-size: 11px; color: var(--accent); font-weight: 600; line-height: 1.5; }
+
+  .sorteio-card { background: linear-gradient(135deg, rgba(0,189,247,.07) 0%, var(--card) 70%); border: 1px solid rgba(0,189,247,.2); border-radius: 14px; padding: 20px 24px; margin-bottom: 28px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  .sorteio-stat { text-align: center; }
+  .sorteio-stat-val { font-family: "tablet-gothic-compressed", sans-serif; font-size: 32px; font-weight: 800; line-height: 1; }
+  .sorteio-stat-lbl { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
+  .sorteio-div { width: 1px; height: 34px; background: var(--border); flex-shrink: 0; }
+
+  @media (max-width: 768px) {
+    .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+    .growth-banner { flex-direction: column; }
+    .growth-stat-group { justify-content: flex-start; }
+    .feat-card { flex-direction: column; }
+    .sorteio-card { flex-direction: column; }
+  }
 </style>
 </head>
 <body>
@@ -231,7 +273,7 @@
     <div class="header-right">
       <div class="client-label">Cliente</div>
       <div class="client-name">Center Led</div>
-      <div class="period-badge"><span class="dot"></span> <span id="period-label">Abril 2026</span></div>
+      <div class="period-badge"><span class="dot"></span> <span id="period-label">Maio 2026</span></div>
     </div>
   </header>
 
@@ -240,7 +282,8 @@
     <button class="month-tab" data-tab="jan" onclick="showTab('jan')">Jan 2026</button>
     <button class="month-tab" data-tab="fev" onclick="showTab('fev')">Fev 2026</button>
     <button class="month-tab" data-tab="mar" onclick="showTab('mar')">Mar 2026</button>
-    <button class="month-tab active" data-tab="abr" onclick="showTab('abr')">Abr 2026</button>
+    <button class="month-tab" data-tab="abr" onclick="showTab('abr')">Abr 2026</button>
+    <button class="month-tab active" data-tab="mai" onclick="showTab('mai')">Mai 2026</button>
   </div>
 
   <!-- ═══════════════════════════ TAB: JANEIRO ═══════════════════════════ -->
@@ -576,7 +619,7 @@
   </div>
 
   <!-- ═══════════════════════════ TAB: ABRIL ═══════════════════════════ -->
-  <div id="tab-abr" class="tab-content">
+  <div id="tab-abr" class="tab-content" style="display:none">
 
     <div class="note-badge">Métricas do Instagram: janela de 30 dias · 11/abr a 10/mai · Instagram confirmou bons resultados em abril</div>
 
@@ -952,6 +995,326 @@
   </div>
   <!-- FIM TAB ABRIL -->
 
+  <!-- ═══════════════════════════ TAB: MAIO ═══════════════════════════ -->
+  <div id="tab-mai" class="tab-content">
+
+    <!-- BANNER TRÁFEGO PAGO -->
+    <div class="paid-traffic-banner" style="border-color:rgba(234,179,8,.35); background:linear-gradient(135deg,rgba(234,179,8,.10) 0%,rgba(0,189,247,.06) 100%); margin-bottom:20px;">
+      <div class="paid-banner-tag" style="color:var(--yellow);">
+        <span style="width:14px;height:1px;background:var(--yellow);display:inline-block;"></span>
+        Tráfego Pago · Primeiros 30 dias
+      </div>
+      <div class="paid-banner-title">Ativado em <span style="color:var(--yellow);">08/05/2026</span></div>
+      <div class="paid-banner-sub">Este relatório cobre os primeiros 30 dias com tráfego pago — de 8 de maio a 8 de junho de 2026. Os dados refletem o impacto direto da ativação dos anúncios sobre alcance, visualizações e atividade no perfil.</div>
+      <div class="paid-detail-grid" style="border-top:1px solid rgba(234,179,8,.15); padding-top:16px; margin-top:4px;">
+        <div class="paid-detail-item" style="border-color:rgba(234,179,8,.15);">
+          <div class="paid-detail-label" style="color:var(--yellow);">Período coberto</div>
+          <div class="paid-detail-value">8 mai — 8 jun 2026 · 31 dias</div>
+        </div>
+        <div class="paid-detail-item" style="border-color:rgba(234,179,8,.15);">
+          <div class="paid-detail-label" style="color:var(--yellow);">Modelo de campanha</div>
+          <div class="paid-detail-value">Tráfego pago ativo desde 08/05 · Meta Ads</div>
+        </div>
+        <div class="paid-detail-item" style="border-color:rgba(234,179,8,.15);">
+          <div class="paid-detail-label" style="color:var(--yellow);">Destaque do período</div>
+          <div class="paid-detail-value">+1.247% contas alcançadas vs anterior</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI STRIP -->
+    <div class="kpi-strip">
+      <div class="kpi-strip-item">
+        <div class="kpi-strip-icon">👁</div>
+        <div class="kpi-strip-value">149.552</div>
+        <div class="kpi-strip-label">Visualizações totais</div>
+        <div class="kpi-strip-delta">↑ 88,5% via anúncios</div>
+      </div>
+      <div class="kpi-strip-item">
+        <div class="kpi-strip-icon">📣</div>
+        <div class="kpi-strip-value">67.561</div>
+        <div class="kpi-strip-label">Contas alcançadas</div>
+        <div class="kpi-strip-delta">↑ +1.247,4% vs anterior</div>
+      </div>
+      <div class="kpi-strip-item">
+        <div class="kpi-strip-icon">💬</div>
+        <div class="kpi-strip-value">1.130</div>
+        <div class="kpi-strip-label">Interações totais</div>
+        <div class="kpi-strip-delta">↑ 41,2% via anúncios</div>
+      </div>
+      <div class="kpi-strip-item">
+        <div class="kpi-strip-icon">👥</div>
+        <div class="kpi-strip-value">3.510</div>
+        <div class="kpi-strip-label">Seguidores atuais</div>
+        <div class="kpi-strip-delta">↑ +441 no período</div>
+      </div>
+    </div>
+
+    <!-- CRESCIMENTO vs ANTERIOR -->
+    <div class="growth-banner">
+      <div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:6px;">Crescimento vs período anterior</div>
+        <div style="font-size:12px; color:var(--text-muted); line-height:1.5; max-width:240px;">Os primeiros 30 dias com tráfego pago transformaram todos os indicadores do perfil.</div>
+      </div>
+      <div class="growth-stat-group">
+        <div class="growth-banner-stat">
+          <div class="growth-stat-value">+1.247%</div>
+          <div class="growth-stat-label">Contas alcançadas</div>
+        </div>
+        <div class="growth-stat-div"></div>
+        <div class="growth-banner-stat">
+          <div class="growth-stat-value">+677%</div>
+          <div class="growth-stat-label">Atividade do perfil</div>
+        </div>
+        <div class="growth-stat-div"></div>
+        <div class="growth-banner-stat">
+          <div class="growth-stat-value">+753%</div>
+          <div class="growth-stat-label">Visitas ao perfil</div>
+        </div>
+        <div class="growth-stat-div"></div>
+        <div class="growth-banner-stat">
+          <div class="growth-stat-value">+142%</div>
+          <div class="growth-stat-label">Links externos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISUALIZAÇÕES + ORIGEM -->
+    <div class="section-label">Visualizações e distribuição · 8 mai — 8 jun</div>
+    <div class="two-col section-gap">
+      <div class="card">
+        <div class="card-title">Por formato de conteúdo</div>
+        <div class="bar-row"><div class="bar-label">Reels</div><div class="bar-track"><div class="bar-fill gradient" style="width:48.4%"></div></div><div class="bar-pct">48,4%</div></div>
+        <div class="bar-row"><div class="bar-label">Stories</div><div class="bar-track"><div class="bar-fill cyan" style="width:28.3%"></div></div><div class="bar-pct">28,3%</div></div>
+        <div class="bar-row"><div class="bar-label">Posts</div><div class="bar-track"><div class="bar-fill purple" style="width:23.2%"></div></div><div class="bar-pct">23,2%</div></div>
+        <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border); font-size:11px; color:var(--text-muted); line-height:1.6;">Entre não seguidores, <strong style="color:var(--accent)">Reels dominam com 57,9%</strong>. Entre seguidores, Stories lideram (38,4%). Cada formato cumpre um papel distinto na jornada do público.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Origem das visualizações</div>
+        <div class="donut-wrap">
+          <svg class="donut-svg" width="110" height="110" viewBox="0 0 110 110">
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#163040" stroke-width="14"/>
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#0090c0" stroke-width="14" stroke-dasharray="237.3 14.0" stroke-dashoffset="62.8" stroke-linecap="round"/>
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#00bdf7" stroke-width="14" stroke-dasharray="14.0 237.3" stroke-dashoffset="-174.5" stroke-linecap="round"/>
+            <text x="55" y="50" text-anchor="middle" fill="#f4f4f4" font-size="11" font-family="tablet-gothic-compressed" font-weight="800">94,4%</text>
+            <text x="55" y="63" text-anchor="middle" fill="#7a9faf" font-size="8">não-seg.</text>
+          </svg>
+          <div class="donut-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#0090c0"></div><span>Não seguidores</span><span class="legend-pct">94,4%</span></div>
+            <div class="legend-item"><div class="legend-dot" style="background:#00bdf7"></div><span>Seguidores</span><span class="legend-pct">5,6%</span></div>
+          </div>
+        </div>
+        <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border); font-size:11px; color:var(--text-muted); line-height:1.6;">Com tráfego pago ativo, <strong style="color:var(--accent)">94,4% das visualizações</strong> chegaram de pessoas fora da base — máxima exposição a novos públicos.</div>
+      </div>
+    </div>
+
+    <!-- INTERAÇÕES -->
+    <div class="section-label">Interações por formato · Maio</div>
+    <div class="three-col section-gap">
+      <div class="card">
+        <div class="card-title">Reels · 62,4% das interações</div>
+        <div class="stat-row"><span class="stat-name">Curtidas</span><span class="stat-val">239</span></div>
+        <div class="stat-row"><span class="stat-name">Comentários</span><span class="stat-val">34</span></div>
+        <div class="stat-row"><span class="stat-name">Salvamentos</span><span class="stat-val">22</span></div>
+        <div class="stat-row"><span class="stat-name">Compartilhamentos</span><span class="stat-val">49</span></div>
+        <div class="stat-row"><span class="stat-name">Reposts</span><span class="stat-val accent">21</span></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Posts · 21,8% das interações</div>
+        <div class="stat-row"><span class="stat-name">Curtidas</span><span class="stat-val">63</span></div>
+        <div class="stat-row"><span class="stat-name">Comentários</span><span class="stat-val">27</span></div>
+        <div class="stat-row"><span class="stat-name">Salvamentos</span><span class="stat-val">12</span></div>
+        <div class="stat-row"><span class="stat-name">Compartilhamentos</span><span class="stat-val">17</span></div>
+        <div class="stat-row"><span class="stat-name">Reposts</span><span class="stat-val accent">7</span></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Stories · Canal de frequência</div>
+        <div class="stat-row"><span class="stat-name">Respostas</span><span class="stat-val">6</span></div>
+        <div class="stat-row"><span class="stat-name">Compartilhamentos</span><span class="stat-val">20</span></div>
+        <div style="margin-top:14px; padding-top:12px; border-top:1px solid var(--border); font-size:11px; color:var(--text-muted); line-height:1.55;">Stories mantêm presença diária e constroem reconhecimento. CTAs como enquetes e perguntas podem dobrar a interação direta.</div>
+      </div>
+    </div>
+
+    <!-- TOP CONTEÚDOS -->
+    <div class="section-label">Conteúdos de destaque · Maio</div>
+
+    <div class="feat-card">
+      <div class="feat-rank">1</div>
+      <div style="flex:1;">
+        <div class="feat-type">Reel · Maior alcance do período</div>
+        <div class="feat-title">"Tem coisa que só quem é mãe sente" — Dia das Mães</div>
+        <div class="feat-date">4 de maio · Duração: 0:50</div>
+        <div class="feat-stats">
+          <div class="feat-stat"><div class="feat-stat-val">92.874</div><div class="feat-stat-lbl">Visualizações</div></div>
+          <div class="feat-stat"><div class="feat-stat-val">50.849</div><div class="feat-stat-lbl">Alcance</div></div>
+          <div class="feat-stat"><div class="feat-stat-val">166</div><div class="feat-stat-lbl">Interações</div></div>
+          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">105</div><div class="feat-stat-lbl">Novos seguidores</div></div>
+          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--text-muted);">1h 52m</div><div class="feat-stat-lbl">Tempo assistido</div></div>
+        </div>
+        <div class="feat-highlight">Reel com maior alcance do período: 50.849 pessoas únicas. Conteúdo emocional com datas relevantes converte alcance em seguidores de forma orgânica.</div>
+      </div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-rank">2</div>
+      <div style="flex:1;">
+        <div class="feat-type">Reel · Maior conversão em seguidores</div>
+        <div class="feat-title">"Esquecer a luz acesa, levantar para apagar..."</div>
+        <div class="feat-date">21 de maio · Duração: 0:34</div>
+        <div class="feat-stats">
+          <div class="feat-stat"><div class="feat-stat-val">35.866</div><div class="feat-stat-lbl">Visualizações</div></div>
+          <div class="feat-stat"><div class="feat-stat-val">20.097</div><div class="feat-stat-lbl">Alcance</div></div>
+          <div class="feat-stat"><div class="feat-stat-val">323</div><div class="feat-stat-lbl">Interações</div></div>
+          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--accent);">242</div><div class="feat-stat-lbl">Curtidas</div></div>
+          <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">221</div><div class="feat-stat-lbl">Novos seguidores</div></div>
+        </div>
+        <div class="feat-highlight">221 pessoas começaram a seguir a partir deste reel — maior índice de conversão em seguidores do período.</div>
+      </div>
+    </div>
+
+    <!-- SORTEIO -->
+    <div class="sorteio-card">
+      <div style="flex-shrink:0; min-width:150px;">
+        <div style="font-size:9px; color:var(--accent); font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:6px;">Post de maior engajamento</div>
+        <div style="font-family:'tablet-gothic-compressed',sans-serif; font-size:22px; font-weight:800; color:var(--text); text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">Sorteio Brasil</div>
+        <div style="font-size:11px; color:var(--text-dim);">8 de junho</div>
+      </div>
+      <div style="flex:1; display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:flex-end;">
+        <div class="sorteio-stat"><div class="sorteio-stat-val">5.648</div><div class="sorteio-stat-lbl">Visualizações</div></div>
+        <div class="sorteio-div"></div>
+        <div class="sorteio-stat"><div class="sorteio-stat-val" style="color:var(--accent);">274</div><div class="sorteio-stat-lbl">Comentários</div></div>
+        <div class="sorteio-div"></div>
+        <div class="sorteio-stat"><div class="sorteio-stat-val" style="color:var(--green);">370</div><div class="sorteio-stat-lbl">Interações totais</div></div>
+        <div class="sorteio-div"></div>
+        <div class="sorteio-stat"><div class="sorteio-stat-val">26</div><div class="sorteio-stat-lbl">Novos seguidores</div></div>
+      </div>
+      <div style="width:100%; margin-top:14px; padding-top:12px; border-top:1px solid rgba(0,189,247,.15); font-size:12px; color:var(--text-muted); line-height:1.55;"><strong style="color:var(--accent);">274 comentários</strong> — o maior pico de engajamento ativo da história do perfil. Mecânicas de sorteio criam comunidade e disparam o alcance orgânico.</div>
+    </div>
+
+    <!-- SEGUIDORES + PÚBLICO -->
+    <div class="section-label">Seguidores e público · Maio</div>
+    <div class="two-col section-gap">
+      <div class="card">
+        <div class="card-title">Crescimento de seguidores</div>
+        <div style="display:flex; align-items:flex-start; gap:16px; margin-bottom:18px;">
+          <div>
+            <div style="font-family:'tablet-gothic-compressed',sans-serif; font-size:52px; font-weight:800; color:var(--accent); line-height:1;">+441</div>
+            <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">seguidores líquidos</div>
+          </div>
+          <div style="flex:1; border-left:1px solid var(--border); padding-left:16px; margin-top:4px;">
+            <div class="stat-row"><span class="stat-name">Total atual</span><span class="stat-val">3.510</span></div>
+            <div class="stat-row"><span class="stat-name">Novos seguidores</span><span class="stat-val green">+465</span></div>
+            <div class="stat-row"><span class="stat-name">Deixaram de seguir</span><span class="stat-val">24</span></div>
+            <div class="stat-row"><span class="stat-name">Crescimento</span><span class="stat-val green">+14,6%</span></div>
+          </div>
+        </div>
+        <div style="padding-top:12px; border-top:1px solid var(--border); font-size:11px; color:var(--text-muted); line-height:1.6;"><strong style="color:var(--accent);">8 reels e 3 posts</strong> publicados — maior frequência de Reels desde o início do perfil.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Perfil do público</div>
+        <div style="margin-bottom:14px;">
+          <div style="font-size:10px; color:var(--text-dim); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; font-weight:700;">Faixa etária</div>
+          <div class="age-row"><div class="age-label" style="font-weight:700; color:var(--text);">35–44</div><div class="age-track"><div class="age-fill" style="width:39.3%; background:linear-gradient(90deg,var(--accent2),var(--accent));"><span class="age-fill-label" style="color:#050f14;">39,3%</span></div></div></div>
+          <div class="age-row"><div class="age-label">25–34</div><div class="age-track"><div class="age-fill" style="width:23.5%; background:var(--accent2);"><span class="age-fill-label" style="color:#fff;">23,5%</span></div></div></div>
+          <div class="age-row"><div class="age-label">45–54</div><div class="age-track"><div class="age-fill" style="width:21.5%; background:var(--muted);"><span class="age-fill-label">21,5%</span></div></div></div>
+          <div class="age-row"><div class="age-label">55–64</div><div class="age-track"><div class="age-fill" style="width:9.1%; background:var(--muted);"><span class="age-fill-label">9,1%</span></div></div></div>
+        </div>
+        <div style="padding-top:12px; border-top:1px solid var(--border);">
+          <div style="font-size:10px; color:var(--text-dim); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; font-weight:700;">Gênero</div>
+          <div class="gender-bars">
+            <div class="gender-bar" style="width:46.9%; height:62%; background:linear-gradient(180deg,var(--accent),var(--accent2));">46,9%</div>
+            <div class="gender-bar" style="width:53.1%; height:75%; background:linear-gradient(180deg,#a855f7,#7c3aed);">53,1%</div>
+          </div>
+          <div class="gender-labels"><div class="gender-label-item" style="color:var(--accent);">Homens</div><div class="gender-label-item" style="color:#a855f7;">Mulheres</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCALIZAÇÃO -->
+    <div class="card section-gap">
+      <div class="card-title">Principais localizações</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 28px;">
+        <div class="bar-row"><div class="bar-label" style="width:110px;">João Pessoa</div><div class="bar-track"><div class="bar-fill gradient" style="width:56.2%"></div></div><div class="bar-pct">56,2%</div></div>
+        <div class="bar-row"><div class="bar-label" style="width:110px;">Bayeux</div><div class="bar-track"><div class="bar-fill cyan" style="width:2.5%"></div></div><div class="bar-pct">2,5%</div></div>
+        <div class="bar-row"><div class="bar-label" style="width:110px;">Santa Rita</div><div class="bar-track"><div class="bar-fill cyan" style="width:5.2%"></div></div><div class="bar-pct">5,2%</div></div>
+        <div class="bar-row"><div class="bar-label" style="width:110px;">Campina Grande</div><div class="bar-track"><div class="bar-fill purple" style="width:2.2%"></div></div><div class="bar-pct">2,2%</div></div>
+        <div class="bar-row"><div class="bar-label" style="width:110px;">Cabedelo</div><div class="bar-track"><div class="bar-fill cyan" style="width:3.4%"></div></div><div class="bar-pct">3,4%</div></div>
+      </div>
+      <div style="margin-top:12px; padding-top:12px; border-top:1px solid var(--border); font-size:11px; color:var(--text-muted); line-height:1.6;">Público concentrado em João Pessoa e Grande JP — <strong style="color:var(--accent);">conteúdo com referências locais e datas regionais converte diretamente em visitas à loja</strong>.</div>
+    </div>
+
+    <!-- INSIGHTS -->
+    <div class="section-label">Análise e insights · Maio</div>
+    <div class="insights-grid section-gap">
+      <div class="insight-card">
+        <div class="insight-icon success">🚀</div>
+        <div>
+          <div class="insight-title">Tráfego pago multiplicou o alcance</div>
+          <div class="insight-text">Em 30 dias com anúncios ativos, as contas alcançadas cresceram +1.247%. O investimento gerou exposição massiva para novos públicos — resultado imediato, direto e mensurável no perfil.</div>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon action">❤️</div>
+        <div>
+          <div class="insight-title">Conteúdo emocional converte em seguidores</div>
+          <div class="insight-text">Os dois reels mais convertidos foram emocionais: Dia das Mães (105 novos) e o de 21/mai (221 novos). Conteúdo que conecta com o cotidiano do público transforma alcance em comunidade real.</div>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon warn">🏆</div>
+        <div>
+          <div class="insight-title">Sorteio gerou o maior pico de engajamento</div>
+          <div class="insight-text">274 comentários no sorteio é o maior engajamento ativo da história do perfil. Ações com mecânica de participação ativam a comunidade e ampliam o alcance orgânico de forma exponencial.</div>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon info">📍</div>
+        <div>
+          <div class="insight-title">Perfil virou ponto de chegada</div>
+          <div class="insight-text">Visitas ao perfil cresceram +753% e cliques em links externos +142%. As pessoas chegam ao perfil prontas para dar o próximo passo em direção à compra.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRÓXIMOS PASSOS -->
+    <div class="next-steps">
+      <div style="font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:8px; margin-bottom:10px;"><span style="width:14px;height:1px;background:var(--accent);display:inline-block;"></span>Próximos passos</div>
+      <div style="font-family:'tablet-gothic-compressed',sans-serif; font-size:28px; font-weight:800; color:var(--text);">Direcionamentos para Junho <span style="color:var(--accent);">→</span></div>
+      <div class="next-steps-list">
+        <div class="next-step">
+          <div class="next-step-num">01</div>
+          <div class="next-step-content">
+            <div class="next-step-title">Manter frequência de 8+ Reels</div>
+            <div class="next-step-text">8 Reels em maio é o benchmark a manter. O formato lidera em alcance (48,4%) e interações (62,4%). Frequência consistente sustenta o crescimento orgânico e o posicionamento no algoritmo.</div>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">02</div>
+          <div class="next-step-content">
+            <div class="next-step-title">CTA ao final de cada Reel</div>
+            <div class="next-step-text">Com 221 novos seguidores vindos de um único reel, inserir chamadas claras ("segue o perfil", "salva esse vídeo") pode dobrar a conversão de alcance em audiência.</div>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">03</div>
+          <div class="next-step-content">
+            <div class="next-step-title">Repetir mecânica de sorteio</div>
+            <div class="next-step-text">274 comentários comprovam que ações de sorteio geram engajamento massivo. Um novo sorteio em junho com premiação relevante pode criar outro pico de alcance e novos seguidores.</div>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">04</div>
+          <div class="next-step-content">
+            <div class="next-step-title">Ativar Stories com interação direta</div>
+            <div class="next-step-text">Stories têm alta frequência entre seguidores mas baixa interação. Enquetes, caixas de perguntas e CTA para WhatsApp podem transformar views passivas em contatos reais e vendas.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- FIM TAB MAIO -->
+
   <!-- FOOTER -->
   <footer>
     <img src="logo_hoclle.png" alt="Hoclle Agency" style="height:30px; opacity:.75;">
@@ -962,7 +1325,7 @@
 
 <script>
   function showTab(tabId) {
-    const labels = { jan: 'Janeiro 2026', fev: 'Fevereiro 2026', mar: 'Março 2026', abr: 'Abril 2026' };
+    const labels = { jan: 'Janeiro 2026', fev: 'Fevereiro 2026', mar: 'Março 2026', abr: 'Abril 2026', mai: 'Maio 2026' };
     document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.month-tab').forEach(el => el.classList.remove('active'));
     document.getElementById('tab-' + tabId).style.display = 'block';
