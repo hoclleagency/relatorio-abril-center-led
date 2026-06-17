@@ -251,13 +251,19 @@
   .sorteio-stat-val { font-family: "tablet-gothic-compressed", sans-serif; font-size: 32px; font-weight: 800; line-height: 1; }
   .sorteio-stat-lbl { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
   .sorteio-div { width: 1px; height: 34px; background: var(--border); flex-shrink: 0; }
+  .feat-thumb { width: 160px; flex-shrink: 0; border-radius: 10px; overflow: hidden; position: relative; background: var(--card2); height: 280px; }
+  .feat-thumb iframe { width: 100%; height: 100%; border: none; display: block; }
+  .sorteio-thumb { width: 90px; flex-shrink: 0; border-radius: 10px; overflow: hidden; position: relative; background: var(--muted); aspect-ratio: 1/1; }
+  .sorteio-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
   @media (max-width: 768px) {
     .kpi-strip { grid-template-columns: repeat(2, 1fr); }
     .growth-banner { flex-direction: column; }
     .growth-stat-group { justify-content: flex-start; }
     .feat-card { flex-direction: column; }
+    .feat-thumb { width: 100%; height: 420px; }
     .sorteio-card { flex-direction: column; }
+    .sorteio-thumb { width: 100%; height: 200px; aspect-ratio: unset; }
   }
 </style>
 </head>
@@ -1000,26 +1006,9 @@
 
     <!-- BANNER TRÁFEGO PAGO -->
     <div class="paid-traffic-banner" style="border-color:rgba(234,179,8,.35); background:linear-gradient(135deg,rgba(234,179,8,.10) 0%,rgba(0,189,247,.06) 100%); margin-bottom:20px;">
-      <div class="paid-banner-tag" style="color:var(--yellow);">
-        <span style="width:14px;height:1px;background:var(--yellow);display:inline-block;"></span>
-        Tráfego Pago · Primeiros 30 dias
-      </div>
-      <div class="paid-banner-title">Ativado em <span style="color:var(--yellow);">08/05/2026</span></div>
-      <div class="paid-banner-sub">Este relatório cobre os primeiros 30 dias com tráfego pago — de 8 de maio a 8 de junho de 2026. Os dados refletem o impacto direto da ativação dos anúncios sobre alcance, visualizações e atividade no perfil.</div>
-      <div class="paid-detail-grid" style="border-top:1px solid rgba(234,179,8,.15); padding-top:16px; margin-top:4px;">
-        <div class="paid-detail-item" style="border-color:rgba(234,179,8,.15);">
-          <div class="paid-detail-label" style="color:var(--yellow);">Período coberto</div>
-          <div class="paid-detail-value">8 mai — 8 jun 2026 · 31 dias</div>
-        </div>
-        <div class="paid-detail-item" style="border-color:rgba(234,179,8,.15);">
-          <div class="paid-detail-label" style="color:var(--yellow);">Modelo de campanha</div>
-          <div class="paid-detail-value">Tráfego pago ativo desde 08/05 · Meta Ads</div>
-        </div>
-        <div class="paid-detail-item" style="border-color:rgba(234,179,8,.15);">
-          <div class="paid-detail-label" style="color:var(--yellow);">Destaque do período</div>
-          <div class="paid-detail-value">+1.247% contas alcançadas vs anterior</div>
-        </div>
-      </div>
+      <div class="paid-banner-tag" style="color:var(--yellow);"><span style="width:14px;height:1px;background:var(--yellow);display:inline-block;"></span> ⚡ Meta Ads · Gestão: Gabriel (Eminence) · 08/05 — 08/06/2026</div>
+      <div class="paid-banner-title">Primeiros <span style="color:var(--yellow);">30 dias</span> com tráfego pago</div>
+      <div class="paid-banner-sub">Os dados deste relatório cobrem o primeiro ciclo completo de anúncios ativos. Tudo que você vê abaixo aconteceu com tráfego pago rodando.</div>
     </div>
 
     <!-- KPI STRIP -->
@@ -1151,8 +1140,9 @@
           <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">105</div><div class="feat-stat-lbl">Novos seguidores</div></div>
           <div class="feat-stat"><div class="feat-stat-val" style="color:var(--text-muted);">1h 52m</div><div class="feat-stat-lbl">Tempo assistido</div></div>
         </div>
-        <div class="feat-highlight">Reel com maior alcance do período: 50.849 pessoas únicas. Conteúdo emocional com datas relevantes converte alcance em seguidores de forma orgânica.</div>
+        <div class="feat-highlight">50.849 pessoas únicas. Maior alcance do período. Data comemorativa + humanização = o reel que mais converteu em audiência.</div>
       </div>
+      <div class="feat-thumb"><iframe src="https://www.instagram.com/reel/DX7dfueiPNO/embed/" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media autoplay; clipboard-write; picture-in-picture" loading="lazy"></iframe></div>
     </div>
 
     <div class="feat-card">
@@ -1168,16 +1158,18 @@
           <div class="feat-stat"><div class="feat-stat-val" style="color:var(--accent);">242</div><div class="feat-stat-lbl">Curtidas</div></div>
           <div class="feat-stat"><div class="feat-stat-val" style="color:var(--green);">221</div><div class="feat-stat-lbl">Novos seguidores</div></div>
         </div>
-        <div class="feat-highlight">221 pessoas começaram a seguir a partir deste reel — maior índice de conversão em seguidores do período.</div>
+        <div class="feat-highlight">221 novos seguidores — tudo de um único reel. Conteúdo do cotidiano que o público reconhece converte mais do que qualquer anúncio.</div>
       </div>
+      <div class="feat-thumb"><iframe src="https://www.instagram.com/reel/DYwsfpdhEI4/embed/" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media autoplay; clipboard-write; picture-in-picture" loading="lazy"></iframe></div>
     </div>
 
     <!-- SORTEIO -->
     <div class="sorteio-card">
-      <div style="flex-shrink:0; min-width:150px;">
-        <div style="font-size:9px; color:var(--accent); font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:6px;">Post de maior engajamento</div>
+      <div class="sorteio-thumb"><img src="mai_sorteio.png" alt="Post Sorteio Brasil"></div>
+      <div style="flex-shrink:0; min-width:140px;">
+        <div style="font-size:9px; color:var(--accent); font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:6px;">Post · 8 de junho</div>
         <div style="font-family:'tablet-gothic-compressed',sans-serif; font-size:22px; font-weight:800; color:var(--text); text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">Sorteio Brasil</div>
-        <div style="font-size:11px; color:var(--text-dim);">8 de junho</div>
+        <div style="font-size:11px; color:var(--text-dim); line-height:1.5; margin-top:6px;">Maior engajamento da história do perfil.</div>
       </div>
       <div style="flex:1; display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:flex-end;">
         <div class="sorteio-stat"><div class="sorteio-stat-val">5.648</div><div class="sorteio-stat-lbl">Visualizações</div></div>
@@ -1188,7 +1180,6 @@
         <div class="sorteio-div"></div>
         <div class="sorteio-stat"><div class="sorteio-stat-val">26</div><div class="sorteio-stat-lbl">Novos seguidores</div></div>
       </div>
-      <div style="width:100%; margin-top:14px; padding-top:12px; border-top:1px solid rgba(0,189,247,.15); font-size:12px; color:var(--text-muted); line-height:1.55;"><strong style="color:var(--accent);">274 comentários</strong> — o maior pico de engajamento ativo da história do perfil. Mecânicas de sorteio criam comunidade e disparam o alcance orgânico.</div>
     </div>
 
     <!-- SEGUIDORES + PÚBLICO -->
@@ -1249,29 +1240,29 @@
       <div class="insight-card">
         <div class="insight-icon success">🚀</div>
         <div>
-          <div class="insight-title">Tráfego pago multiplicou o alcance</div>
-          <div class="insight-text">Em 30 dias com anúncios ativos, as contas alcançadas cresceram +1.247%. O investimento gerou exposição massiva para novos públicos — resultado imediato, direto e mensurável no perfil.</div>
+          <div class="insight-title">+1.247% de alcance em 30 dias</div>
+          <div class="insight-text">67.561 pessoas alcançadas — o maior número da história do perfil. O tráfego pago entregou o que prometia.</div>
         </div>
       </div>
       <div class="insight-card">
         <div class="insight-icon action">❤️</div>
         <div>
-          <div class="insight-title">Conteúdo emocional converte em seguidores</div>
-          <div class="insight-text">Os dois reels mais convertidos foram emocionais: Dia das Mães (105 novos) e o de 21/mai (221 novos). Conteúdo que conecta com o cotidiano do público transforma alcance em comunidade real.</div>
+          <div class="insight-title">Humanização converte mais do que anúncio</div>
+          <div class="insight-text">Dia das Mães: 105 novos seguidores. Reel de 21/mai: 221 novos. Conteúdo do cotidiano gera resultado orgânico que anúncio sozinho não alcança.</div>
         </div>
       </div>
       <div class="insight-card">
         <div class="insight-icon warn">🏆</div>
         <div>
-          <div class="insight-title">Sorteio gerou o maior pico de engajamento</div>
-          <div class="insight-text">274 comentários no sorteio é o maior engajamento ativo da história do perfil. Ações com mecânica de participação ativam a comunidade e ampliam o alcance orgânico de forma exponencial.</div>
+          <div class="insight-title">274 comentários. Maior da história.</div>
+          <div class="insight-text">O sorteio gerou mais participação do que qualquer outro post do perfil. Mecânica de sorteio transforma alcance em comunidade ativa.</div>
         </div>
       </div>
       <div class="insight-card">
         <div class="insight-icon info">📍</div>
         <div>
-          <div class="insight-title">Perfil virou ponto de chegada</div>
-          <div class="insight-text">Visitas ao perfil cresceram +753% e cliques em links externos +142%. As pessoas chegam ao perfil prontas para dar o próximo passo em direção à compra.</div>
+          <div class="insight-title">+753% de visitas. O perfil virou destino.</div>
+          <div class="insight-text">2.987 visitas ao perfil e 121 cliques em links externos. O público chega pronto — o CTA de contato precisa estar visível.</div>
         </div>
       </div>
     </div>
